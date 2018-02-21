@@ -8,15 +8,17 @@ public class ParameterFormatElement implements FormatElement {
 
 	private final int index;
 	private final String identifier;
+	private final Flags flags;
 	private final int width;
 	private final int precision;
 	private final FormatType type;
 	private final SimpleType stype;
 	private final PrintInvoker invoker;
 	
-	public ParameterFormatElement(int index, String identifier, int width, int precision, FormatType type, SimpleType stype, PrintInvoker invoker) {
+	public ParameterFormatElement(int index, String identifier, Flags flags, int width, int precision, FormatType type, SimpleType stype, PrintInvoker invoker) {
 		this.index = index;
 		this.identifier = identifier;
+		this.flags = flags;
 		this.width = width;
 		this.precision = precision;
 		this.type = type;
@@ -26,6 +28,10 @@ public class ParameterFormatElement implements FormatElement {
 	
 	public String getStringValue() {
 		return identifier;
+	}
+	
+	public Flags getFlags() {
+		return flags;
 	}
 
 	public int getIndex() {
